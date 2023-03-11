@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class WaveSpawner1 : MonoBehaviour
+public class WaveSpawner : MonoBehaviour
 {
 
     public enum SpawnState { SPAWNING, WAITING, COUNTING};

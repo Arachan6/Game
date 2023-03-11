@@ -11,6 +11,7 @@ public class Interactable : MonoBehaviour
 
     public virtual void Interact ()
     {
+        // For now only works with the radius given.
         //this method is meant to be overriden.
         print("interacted with " + transform.name);
     }

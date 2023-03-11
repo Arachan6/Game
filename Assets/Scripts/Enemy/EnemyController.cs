@@ -15,21 +15,28 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         float distance = Vector3.Distance(target.position,  transform.position);
 
+        // agregar condicion que haga que tambien vayan a target.position
+        // si atacamos al enemy
         if(distance <= lookRadius)
         {
             agent.SetDestination(target.position);
-
+            
             if (distance <= agent.stoppingDistance)
 
             {
-                // Attack the target
+                // Attack the target (if melee)
                 FaceTarget();
+
             }
+        }
+
+        if (distance >= lookRadius)
+        {
+            agent.SetDestination(new Vector3(37.5f, 1f, -0.5f));
         }
     }
 
@@ -41,6 +48,7 @@ public class EnemyController : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
 
+    // esto es para ver el rango del lookRadius de los enemigos en la Scene.
     void OnDrawGizmosSelected ()
     {
         Gizmos.color = Color.red;
