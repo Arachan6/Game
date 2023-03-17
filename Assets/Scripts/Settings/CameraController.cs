@@ -38,10 +38,10 @@ public class CameraController : MonoBehaviour
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         pos.y -= scroll * scrollSpeed * 100f * Time.deltaTime;
 
-        pos.x = Mathf.Clamp(pos.x, panLimitX.x, panLimitX.y);
-        pos.z = Mathf.Clamp(pos.z, panLimitZ.x, panLimitZ.y);
+        //pos.x = Mathf.Clamp(pos.x, panLimitX.x, panLimitX.y);
+        //pos.z = Mathf.Clamp(pos.z, panLimitZ.x, panLimitZ.y);
 
-        pos.y = Mathf.Clamp(pos.y, panLimitY.x, panLimitY.y);
+        //pos.y = Mathf.Clamp(pos.y, panLimitY.x, panLimitY.y);
 
         transform.position = pos;
     }
